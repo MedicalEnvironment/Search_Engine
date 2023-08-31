@@ -1,9 +1,10 @@
-//
-// Created by Akbar Abayev on 22.08.2023.
-//
 #include <gtest/gtest.h>
 #include <vector>
+#include <string>
+
 #include "../include/InvertedIndex.h"
+#include "../include/ConverterJSON.h"
+#include "../include/server.h"
 
 using namespace std;
 

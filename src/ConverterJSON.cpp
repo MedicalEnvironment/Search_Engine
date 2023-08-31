@@ -1,62 +1,31 @@
 #include "../include/ConverterJSON.h"
+#include "../include/server.h"
 
-std::vector<std::string> ConverterJSON::GetTextDocuments() {
-    std::ifstream configStream("config.json");
-    json config;
-    configStream >> config;
-
-    std::vector<std::string> fileContents;
-    for (const std::string& filePath : config["files"]) {
-        std::ifstream fileStream(filePath);
-        if (fileStream.is_open()) {
-            std::string content((std::istreambuf_iterator<char>(fileStream)), std::istreambuf_iterator<char>());
-            fileContents.push_back(content);
-            fileStream.close();
-        }
-    }
-    return fileContents;
+ConverterJSON::ConverterJSON(const std::string& config_path, std::string request_path, std::string answers_path)
+        : _config_path(config_path), _request_path(request_path), _answers_path(answers_path) {
+    // Implement the constructor
 }
 
-int ConverterJSON::GetResponsesLimit() {
-    std::ifstream configStream("config.json");
-    json config;
-    configStream >> config;
-
-    return config["config"]["max_responses"];
+std::vector<std::string> ConverterJSON::getTextDocuments() {
+    // Implement getTextDocuments
 }
 
-std::vector<std::string> ConverterJSON::GetRequests() {
-    std::ifstream requestsStream("requests.json");
-    json requests;
-    requestsStream >> requests;
-
-    return requests["requests"];
+int ConverterJSON::getResponsesLimit() {
+    // Implement getResponsesLimit
 }
 
-void ConverterJSON::putAnswers(std::vector<std::vector<std::pair<int, float>>> answers) {
-    json answersJson;
+std::vector<std::string> ConverterJSON::getRequests() {
+    // Implement getRequests
+}
 
-    int requestId = 1;
-    for (const auto& response : answers) {
-        json responseJson;
+void ConverterJSON::putAnswers(const std::vector<std::vector<RelativeIndex>>& answers) {
+    // Implement putAnswers
+}
 
-        bool result = !response.empty(); // Check if there are any documents in the response
-        responseJson["result"] = result;
+const std::string& ConverterJSON::getName() const {
+    // Implement getName
+}
 
-        if (result) {
-            for (const auto& document : response) {
-                json docJson;
-                docJson["docid"] = document.first;
-                docJson["rank"] = document.second;
-                responseJson["relevance"].push_back(docJson);
-            }
-        }
-
-        answersJson["answers"]["request" + std::to_string(requestId)] = responseJson;
-        requestId++;
-    }
-
-    std::ofstream answersStream("answers.json");
-    answersStream << std::setw(4) << answersJson;
-    answersStream.close();
+const std::string& ConverterJSON::getVersion() const {
+    // Implement getVersion
 }
