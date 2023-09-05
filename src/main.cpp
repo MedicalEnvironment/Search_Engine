@@ -10,15 +10,15 @@ int main() {
     ConverterJSON converter;
 
     // Load data from config files using ConverterJSON methods
-    std::vector<std::string> documents = converter.GetTextDocuments();
-    int responsesLimit = converter.GetResponsesLimit();
-    std::vector<std::string> requests = converter.GetRequests();
+    std::vector<std::string> documents = converter.getTextDocuments();
+    int responsesLimit = converter.getResponsesLimit();
+    std::vector<std::string> requests = converter.getRequests();
 
     // Create an instance of the InvertedIndex class
     InvertedIndex index;
 
     // Update the index with the loaded documents
-    index.UpdateDocumentBase(documents);
+    index.updateDocumentBase(documents);
 
     // Placeholder for search and ranking logic
     std::vector<std::vector<std::pair<int, float>>> searchResults;
@@ -26,7 +26,7 @@ int main() {
     // Use the index to perform searches and populate searchResults
 
     // Update the answers using ConverterJSON method
-    converter.putAnswers(searchResults);
+    //converter.putAnswers(searchResults);
 
     return 0;
 }

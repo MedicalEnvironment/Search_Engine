@@ -12,13 +12,19 @@ FetchContent_Declare(
 )
 FetchContent_MakeAvailable(googletest)
 
+enable_testing()
+
+add_executable(index_test.cpp
+        ${CMAKE_SOURCE_DIR}/src/InvertedIndex.cpp
+        ${CMAKE_SOURCE_DIR}/src/server.cpp)
+
 include(FetchContent)
 
-FetchContent_Declare(json URL https://github.com/nlohmann/json/releases/download/v3.11.2/json.tar.xz)
+FetchContent_Declare(json
+        GIT_REPOSITORY https://github.com/nlohmann/json
+        GIT_TAG v3.10.5)
+
 FetchContent_MakeAvailable(json)
-
-
-enable_testing()
 
 add_executable(
         search_engine  # Define your main executable target here

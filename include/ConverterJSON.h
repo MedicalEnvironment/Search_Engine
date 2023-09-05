@@ -5,10 +5,7 @@
 #include <string>
 #include <fstream>
 #include <iomanip>
-#include "nlohmann/json.hpp"
 #include "../include/server.h"
-
-using json = nlohmann::json;
 
 class ConverterJSON {
     std::string _config_path;

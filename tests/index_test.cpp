@@ -14,10 +14,10 @@ void TestInvertedIndexFunctionality(const vector<string>& docs,
     std::vector<std::vector<Entry>> result;
     InvertedIndex idx;
 
-    idx.UpdateDocumentBase(docs);
+    idx.updateDocumentBase(docs);
 
     for (auto& request : requests) {
-        std::vector<Entry> word_count = idx.GetWordCount(request);
+        std::vector<Entry> word_count = idx.getWordCount(request);
         result.push_back(word_count);
     }
     ASSERT_EQ(result, expected);
@@ -42,8 +42,7 @@ TEST(TestCaseInvertedIndex, TestBasic2) {
     const vector<string> docs = {
             "milk milk milk milk water water water",
             "milk water water",
-            "milk milk milk milk milk water water water water water",
-            "americano cappuccino"
+            "milk milk water water cappuccino cappuccino cappuccino cappuccino"
     };
 
     const vector<string> requests = {"milk", "water", "cappuccino"};
