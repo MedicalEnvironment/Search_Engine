@@ -1,5 +1,4 @@
 #include "../include/ConverterJSON.h"
-#include "../include/server.h"
 
 ConverterJSON::ConverterJSON(const std::string& config_path, std::string request_path, std::string answers_path)
         : _config_path(config_path), _request_path(request_path), _answers_path(answers_path) {

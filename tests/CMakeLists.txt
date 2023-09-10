@@ -14,6 +14,7 @@ add_executable(
         hello_test
         hello_test.cc
         index_test.cpp
+        server_tests.cpp
         ${CMAKE_SOURCE_DIR}/src/InvertedIndex.cpp
         ${CMAKE_SOURCE_DIR}/src/server.cpp
 )

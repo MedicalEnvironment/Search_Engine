@@ -36,8 +36,6 @@ add_executable(
 # Link the executable with nlohmann_json
 target_link_libraries(search_engine PRIVATE nlohmann_json::nlohmann_json)
 
-# Include GoogleTest configurations
-
 # Your hello_test setup
 add_subdirectory(tests)  # Include the tests directory
 

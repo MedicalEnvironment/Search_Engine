@@ -4,7 +4,7 @@
 #include <cstdio>
 #include <vector>
 #include <map>
-
+#include <unordered_map>
 #include <mutex>
 
     #ifndef SEARCH_ENGINE_INVERTEDINDEX_H

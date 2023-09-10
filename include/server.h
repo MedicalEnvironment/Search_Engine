@@ -9,10 +9,11 @@
 #include "../include/InvertedIndex.h"
 
 struct RelativeIndex {
-    size_t _doc_id;
-    float _rank;
     RelativeIndex(size_t doc_id, float rank) : _doc_id(doc_id), _rank(rank) {
     }
+
+    size_t _doc_id;
+    float _rank;
 
     bool operator == (const RelativeIndex& other) const {
         return (_doc_id == other._doc_id && _rank == other._rank);

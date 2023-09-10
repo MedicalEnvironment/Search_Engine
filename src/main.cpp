@@ -1,8 +1,4 @@
-#include <iostream>
-#include <string>
-#include <fstream>
 #include "../include/ConverterJSON.h"
-#include "../include/InvertedIndex.h"
 #include <vector>
 
 int main() {
