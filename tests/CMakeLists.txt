@@ -36,4 +36,6 @@ include(GoogleTest)
 gtest_discover_tests(index_test)
 gtest_discover_tests(hello_test)
 
+add_subdirectory(tests)
+
 enable_testing()

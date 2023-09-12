@@ -16,13 +16,13 @@ FetchContent_MakeAvailable(json)
 # Create the main project executable
 add_executable(
         search_engine
-        main.cpp
-        ConverterJSON.cpp
-        ConverterJSON.h
-        InvertedIndex.h
-        InvertedIndex.cpp
-        server.cpp
-        index_test.cpp
+        src/main.cpp
+        src/ConverterJSON.cpp
+        include/ConverterJSON.h
+        include/InvertedIndex.h
+        src/InvertedIndex.cpp
+        src/server.cpp
+        tests/index_test.cpp
 )
 
 # Link the executable with nlohmann_json
