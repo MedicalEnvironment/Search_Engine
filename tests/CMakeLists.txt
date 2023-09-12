@@ -1,3 +1,12 @@
+# Include GoogleTest and FetchContent configurations for gtest
+include(FetchContent)
+FetchContent_Declare(
+        googletest
+        URL https://github.com/google/googletest/archive/refs/tags/release-1.11.0.zip
+)
+FetchContent_MakeAvailable(googletest)
+
+
 # Create a test executable for index_test.cpp
 add_executable(
         index_test
@@ -26,3 +35,5 @@ target_link_libraries(hello_test PRIVATE gtest_main search_engine_lib)
 include(GoogleTest)
 gtest_discover_tests(index_test)
 gtest_discover_tests(hello_test)
+
+enable_testing()

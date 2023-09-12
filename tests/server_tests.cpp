@@ -21,10 +21,15 @@ const vector<string> request = {"milk water", "sugar"}; const std::vector<vector
             }
 };
 InvertedIndex idx;
+
 idx.updateDocumentBase(docs);
+
 SearchServer srv(idx);
+
 std::vector<vector<RelativeIndex>> result = srv.search(request);
+
 ASSERT_EQ(result, expected); }
+
 TEST(TestCaseSearchServer, TestTop5) { const vector<string> docs = {
         "london is the capital of great britain",
         "paris is the capital of france",
